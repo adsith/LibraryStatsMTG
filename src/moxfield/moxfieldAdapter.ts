@@ -1,5 +1,6 @@
 import { MoxfieldService } from './moxfieldService';
 import { Deck } from '../commons/entities/deck';
+import { Card } from '../commons/entities/card';
 import { IDeckService } from './../commons/contracts/iDeckService';
 
 export class MoxfieldAdapter implements IDeckService {
@@ -9,13 +10,14 @@ export class MoxfieldAdapter implements IDeckService {
         this.service = new MoxfieldService();
     }
 
-    async GetDeckIds(userName: string): Promise<string[]> {
+    async getDeckIds(userName: string): Promise<string[]> {
         const Profile = await this.service.getProfile(userName);
-        return Profile.decks.map(x => x.id);
+        return Profile.decks.map(x => x.publicId);
     }
 
-    GetDeck(userName: string, deckId: string): Promise<Deck> {
-        throw new Error('Method not implemented.');
+    async getDeck(userName: string, deckId: string): Promise<Deck> {
+        const Result = await this.service.getDeck(deckId);
+        return new Deck(Result.name, Result.commanders.map(x => new Card(x.name)));
     }
 
 }
