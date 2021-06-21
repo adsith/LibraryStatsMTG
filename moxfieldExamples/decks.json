@@ -1,0 +1,72 @@
+{
+	"pageNumber": 1,
+	"pageSize": 12,
+	"totalResults": 2,
+	"totalPages": 1,
+	"data": [
+		{
+			"id": "wwz64",
+			"name": "Tazri, Let get this party started",
+			"hasPrimer": false,
+			"format": "commander",
+			"areCommentsEnabled": true,
+			"visibility": "public",
+			"publicUrl": "https://www.moxfield.com/decks/12Ti0nbaF02In7vOJeyZMA",
+			"publicId": "12Ti0nbaF02In7vOJeyZMA",
+			"likeCount": 0,
+			"viewCount": 19,
+			"commentCount": 0,
+			"isLegal": false,
+			"mainCardId": "Yd0aG",
+			"mainCardIdIsCardFace": false,
+			"createdByUser": {
+				"userName": "PhyrexianDecorator",
+				"badges": []
+			},
+			"authors": [
+				{
+					"userName": "PhyrexianDecorator",
+					"badges": []
+				}
+			],
+			"createdAtUtc": "2021-04-03T08:14:10.153Z",
+			"lastUpdatedAtUtc": "2021-04-18T11:36:02.02Z",
+			"mainboardCount": 100,
+			"sideboardCount": 0,
+			"maybeboardCount": 0,
+			"hubNames": []
+		},
+		{
+			"id": "rr791",
+			"name": "Gavi, kinda cEDH",
+			"hasPrimer": false,
+			"format": "commander",
+			"areCommentsEnabled": true,
+			"visibility": "public",
+			"publicUrl": "https://www.moxfield.com/decks/fbjrDpk2okCfeuxjOsfR5Q",
+			"publicId": "fbjrDpk2okCfeuxjOsfR5Q",
+			"likeCount": 0,
+			"viewCount": 18,
+			"commentCount": 0,
+			"isLegal": false,
+			"mainCardId": "EJgbB",
+			"mainCardIdIsCardFace": false,
+			"createdByUser": {
+				"userName": "PhyrexianDecorator",
+				"badges": []
+			},
+			"authors": [
+				{
+					"userName": "PhyrexianDecorator",
+					"badges": []
+				}
+			],
+			"createdAtUtc": "2021-03-19T08:27:22.983Z",
+			"lastUpdatedAtUtc": "2021-03-21T07:32:06.15Z",
+			"mainboardCount": 100,
+			"sideboardCount": 0,
+			"maybeboardCount": 0,
+			"hubNames": []
+		}
+	]
+}

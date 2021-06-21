@@ -1,7 +1,7 @@
+import { Board } from './types';
 import { MoxfieldService } from './moxfieldService';
-import { Deck } from '../commons/entities/deck';
-import { Card } from '../commons/entities/card';
 import { IDeckService } from './../commons/contracts/iDeckService';
+import { Deck, Card } from '../commons/types';
 
 export class MoxfieldAdapter implements IDeckService {
     service: MoxfieldService;
@@ -11,13 +11,27 @@ export class MoxfieldAdapter implements IDeckService {
     }
 
     async getDeckIds(userName: string): Promise<string[]> {
-        const Profile = await this.service.getProfile(userName);
-        return Profile.decks.map(x => x.publicId);
+        const profile = await this.service.getProfile(userName);
+        return profile.decks.map(x => x.publicId);
     }
 
     async getDeck(userName: string, deckId: string): Promise<Deck> {
-        const Result = await this.service.getDeck(deckId);
-        return new Deck(Result.name, Result.commanders.map(x => new Card(x.name)));
+        const result = await this.service.getDeck(deckId);
+        const cards = result.commanders ? this.mapBoardToCards(result.commanders) : [];
+        const deck : Deck = {
+            id : result.publicId,
+            main : cards
+        } 
+        return deck;
+    }
+
+    private mapBoardToCards(board: Board) : Array<Card> {
+        const cards : Array<Card> = [];
+        for (const key of Object.keys(board)) {
+            cards.push({ name: board[key].card.name });
+        }
+
+        return cards;
     }
 
 }

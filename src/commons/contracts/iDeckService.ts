@@ -1,4 +1,4 @@
-import { Deck } from './../entities/deck';
+import { Deck } from "../types";
 
 export interface IDeckService {
     getDeckIds(userName: string) : Promise<Array<string>>;
